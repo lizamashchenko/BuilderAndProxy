@@ -19,12 +19,12 @@ jobs:
         distribution: 'adopt'
         java-version: '11'
 
-    - name: Build with Maven in module1
+    - name: Build with Maven in BuilderModule
       run: |
-        cd module1
+        cd BuilderModule
         mvn clean install
 
-    - name: Run Tests in module1
+    - name: Run Tests in BuilderModule
       run: |
-        cd module1
+        cd BuilderModule
         mvn test
