@@ -8,10 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BuilderModule" />
+        <module name="ProxyModule" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="BuilderModule" target="17" />
+      <module name="ProxyModule" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

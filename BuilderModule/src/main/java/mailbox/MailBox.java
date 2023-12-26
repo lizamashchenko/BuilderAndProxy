@@ -16,7 +16,12 @@ public class MailBox {
 
     public void sendAll() {
         for (MailInfo mailInfo : infos) {
-            MailSender.sendLetter(mailInfo);
+            MailSender sender = new MailSender();
+            switch (mailInfo.getMailCode()) {
+                case HOLIDAY -> sender.sendLetter(mailInfo, new HolidayLetterStrategy());
+                case GIFT -> sender.sendLetter(mailInfo, new GiftLetterStrategy());
+                case BIRTHDAY -> sender.sendLetter(mailInfo, new BirthdayLetterStrategy());
+            }
         }
         infos.clear();
     }
